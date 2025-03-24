@@ -30,20 +30,57 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
   // reset the website body with the new html output
-  document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-    `;
+  // Selecciona el elemento con el ID "widget_content" en el DOM y actualiza su contenido HTML
+  document.querySelector("#widget_content").innerHTML = `
+    <div class="widget"> 
+        <!-- Inserta la variable 'cover' si está definida -->
+        ${cover} 
+        
+        <!-- Inserta una imagen con la URL del avatar especificada en 'variables.avatarURL' -->
+        <img src="${variables.avatarURL}" class="photo" />
+        
+        <!-- Inserta el nombre y apellido; usa valores predeterminados si no están definidos -->
+        <h1>${variables.name || "Lucy"} ${variables.lastName || "Boilett"}</h1>
+        
+        <!-- Muestra el rol del usuario si está definido -->
+        <h2>${variables.role || ""}</h2>
+        
+        <!-- Muestra la ciudad y el país; si no están definidos, muestra cadenas vacías -->
+        <h3>${variables.city || ""}, ${variables.country || ""}</h3>
+        
+        <!-- Crea una lista de enlaces sociales con la clase especificada en 'variables.socialMediaPosition' -->
+        <ul class=${variables.socialMediaPosition}>
+            
+            <!-- Enlace a Twitter, usa un valor predeterminado si 'variables.twitter' no está definido -->
+            <li><a href="https://twitter.com/${
+              variables.twitter ? variables.twitter : "4geeksacademy"
+            }" >
+                <i class="fab fa-twitter"></i>
+            </a></li>
+            
+            <!-- Enlace a GitHub, usa un valor predeterminado si 'variables.github' no está definido -->
+            <li><a href="https://github.com/${
+              variables.github ? variables.github : "4geeksacademy"
+            }" >
+                <i class="fab fa-github"></i>
+            </a></li>
+            
+            <!-- Enlace a LinkedIn, usa un valor predeterminado si 'variables.linkedin' no está definido -->
+            <li><a href="https://linkedin.com/${
+              variables.linkedin ? variables.linkedin : "school/4geeksacademy"
+            }" >
+                <i class="fab fa-linkedin"></i>
+            </a></li>
+            
+            <!-- Enlace a Instagram, usa un valor predeterminado si 'variables.instagram' no está definido -->
+            <li><a href="https://instagram.com/${
+              variables.instagram ? variables.instagram : "4geeksacademy"
+            }" >
+                <i class="fab fa-instagram"></i>
+            </a></li>
+        </ul>
+    </div>
+`;
 }
 
 /**
