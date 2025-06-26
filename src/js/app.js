@@ -40,7 +40,7 @@ function render(variables = {}) {
         <img src="${variables.avatarURL}" class="photo" />
         
         <!-- Inserta el nombre y apellido; usa valores predeterminados si no están definidos -->
-        <h1>${variables.name || "Lucy"} ${variables.lastName || "Boilett"}</h1>
+        <h1>${variables.name || "Andres"} ${variables.lastName || "Lazaro"}</h1>
         
         <!-- Muestra el rol del usuario si está definido -->
         <h2>${variables.role || ""}</h2>
@@ -59,21 +59,21 @@ function render(variables = {}) {
             </a></li>
             
             <!-- Enlace a GitHub, usa un valor predeterminado si 'variables.github' no está definido -->
-            <li><a href="https://github.com/${
+            <li><a href="https://github.com/Lazaroth93${
               variables.github ? variables.github : "4geeksacademy"
             }" >
                 <i class="fab fa-github"></i>
             </a></li>
             
             <!-- Enlace a LinkedIn, usa un valor predeterminado si 'variables.linkedin' no está definido -->
-            <li><a href="https://linkedin.com/${
+            <li><a href="https://www.linkedin.com/in/anlazaro/${
               variables.linkedin ? variables.linkedin : "school/4geeksacademy"
             }" >
                 <i class="fab fa-linkedin"></i>
             </a></li>
             
             <!-- Enlace a Instagram, usa un valor predeterminado si 'variables.instagram' no está definido -->
-            <li><a href="https://instagram.com/${
+            <li><a href="https://www.instagram.com/lazarothz/${
               variables.instagram ? variables.instagram : "4geeksacademy"
             }" >
                 <i class="fab fa-instagram"></i>
@@ -91,9 +91,11 @@ window.onload = function() {
     // if includeCover is true the algorithm should show the cover image
     includeCover: true,
     // this is the image's url that will be used as a background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://t3.ftcdn.net/jpg/06/04/89/48/360_F_604894869_pdTuqeuKhFfAMMQnEqu5T4tCbSeOToBQ.jpg",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAyyRF4quY-ek-kcfelTxCDWdK_2ujDxZKBw&s",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
